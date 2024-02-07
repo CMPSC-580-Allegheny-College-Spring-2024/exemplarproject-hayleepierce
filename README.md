@@ -23,6 +23,12 @@ TODO (250 words minimum): Discuss the overview of the project using and building
 
 ## Literature Review
 
+### [Exploring Technology-and-Sensor-Driven Trends in Education: A Natural-Language-Processing-Enhanced Bibliometrics Study](lit/Exploring_Technology-_and_Sens.pdf)
+
+#### Summary
+
+Exploring Technology-and-Sensor-Driven Trends in Education: A Natural-Language-Processing-Enhanced Bibliometrics Study (Gomez, et. al.) uses [Gensim](https://radimrehurek.com/gensim/) to develop a corpus of articles. A similar method could be useful for the development of the corpus required for this project. Another tool this study used to help develop their corpus was the __PdfToText__ library. This library could also assist in the development of the corpus for this project by turning `.pdf` files into `.txt` files that can be read by code. This study also uses __Python__, which is the programming language that I intend to use for this project.
+
 TODO: Conduct literature review by describing relevant work related to the project and hence providing an overview of the state of the art in the area of the project. This section serves to contextualize the study within the existing body of literature, presenting a thorough review of relevant prior research and scholarly contributions. In clear and meaningful language, this section aims to demonstrate the problems, gaps, controversies, or unanswered questions that are associated with the current understanding of the topic. In addition, this section serves to highlight the current study's unique contribution to the field. By summarizing and critiquing existing works, this section provides a foundation for readers to appreciate the novelty and significance of the study in relation to the broader academic discourse. The "Literature Review" section further contributes to the `why is the project important?` question. The number of scholarly work included in the literature review may vary depending on the project.
 
 ## Methods
