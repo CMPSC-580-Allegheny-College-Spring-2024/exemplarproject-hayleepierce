@@ -19,7 +19,13 @@ Here, think of an interesting name of the work that bring a freshness and excite
 
 ## Overview
 
+This project aims to provide a dashboard where a user can search for a word/phrase within a corpus of articles. The number of articles the word/phrase was found is provided, as well as the percentage of the corpus that references the word/phrase. AI will be used to determine if the word/phrase is discussed in a positive or negative light, giving the user a corresponding percentage of articles for each.
+
+The project will assist users in determining the validity of their word/phrase. Users can assume that if their word/phrase does not appear in many, or none, of the articles the word/phrase is not valid. The project can also help users determine how their word/phrase is typically discussed in academic articles. If the negative percentage of articles that discuss their word/phrase is high they can assume most academic articles portray their word/phrase negatively.
+
+```
 TODO (250 words minimum): Discuss the overview of the project using and building on the project description provided by the department. In this section, a concise summary is discussed of the study's key elements, offering the reader a quick understanding of the research's scope and goals. The section continues to outline the main topics, research questions, hypotheses, and /or theories in a clear and meaningful language to provide a type of roadmap for the reader to navigate the forthcoming details of the project. This section also needs to motivate the project by providing context for the study, outlining the current state of knowledge in the field, and highlighting any gaps or limitations in existing research. The section serves as a foundational guide that enables the reader to grasp the context of the study, in addition to its structure, before moving into a more technically-based discussion in the following sections of the article. In short, the "Overview" section needs to answer the `what` and `why` questions, that is `what is the project?` and `why is the project important?`
+```
 
 ## Literature Review
 
