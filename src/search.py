@@ -1,4 +1,4 @@
-"""Functions that handle searching."""
+"""Function(s) that handle searching."""
 
 
 def find_all(list, string):
