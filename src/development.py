@@ -5,6 +5,7 @@ import os
 from itertools import combinations
 import xml.etree.ElementTree as ET
 
+
 def develop_search_lists(search):
     """Develop a list of lists containing strings to search for."""
     # split the search string
@@ -16,16 +17,17 @@ def develop_search_lists(search):
     # remove punctuation
     for index in range(len(word_list)):
         for char in string.punctuation:
-            word_list[index] = word_list[index].replace(char, '')
+            word_list[index] = word_list[index].replace(char, "")
     # create combination of search words
     search_lists = []
     r = list(range(len(word_list)))
     r.reverse()
     for index in r:
-        x = combinations(word_list, index+1)
-        combination = [' '.join(i) for i in x]
+        x = combinations(word_list, index + 1)
+        combination = [" ".join(i) for i in x]
         search_lists.append(combination)
     return search_lists
+
 
 def develop_corpus(directory):
     """Develop a list of dictionaries containing the articles' information."""
@@ -41,40 +43,40 @@ def develop_corpus(directory):
         # find root of the element tree
         root = tree.getroot()
         # Find the title of the article
-        title = root.find('.//article-title')
-        subtitle = root.find('.//subtitle')
+        title = root.find(".//article-title")
+        subtitle = root.find(".//subtitle")
         if type(title) and type(subtitle) != type(None):
-            article['Title'] = (title.text + ": " + subtitle.text)
+            article["Title"] = title.text + ": " + subtitle.text
         elif type(title) != type(None):
-            article['Title'] = title.text
+            article["Title"] = title.text
         else:
-            article['Title'] = 'None'
+            article["Title"] = "None"
         # find the publication date of the article
-        month = root.find('.//month')
-        day = root.find('.//day')
-        year = root.find('.//year')
+        month = root.find(".//month")
+        day = root.find(".//day")
+        year = root.find(".//year")
         if type(day) != type(None):
-            article['Date'] = month.text + '/' + day.text + '/' + year.text
+            article["Date"] = month.text + "/" + day.text + "/" + year.text
         else:
-            article['Date'] = month.text + '/' +  year.text
+            article["Date"] = month.text + "/" + year.text
         # find the authors of the article
         authors = []
-        surname = root.findall('.//surname')
-        given_names = root.findall('.//given-names')
+        surname = root.findall(".//surname")
+        given_names = root.findall(".//given-names")
         for name in surname:
             if type(name.text) != type(None):
                 authors.append(name.text)
         count = 0
         for name in given_names:
             if type(name.text) != type(None):
-                authors[count] = authors[count] + ', ' + name.text
+                authors[count] = authors[count] + ", " + name.text
                 count += 1
-        article['Author(s)'] = authors
+        article["Author(s)"] = authors
         # find all paragraphs within the article
         paragraphs = []
-        for paragraph in root.findall('.//p'):
+        for paragraph in root.findall(".//p"):
             paragraphs.append(paragraph.text)
-        article['Content'] = paragraphs
+        article["Content"] = paragraphs
         # add article to corpus
         corpus.append(article)
     return corpus
