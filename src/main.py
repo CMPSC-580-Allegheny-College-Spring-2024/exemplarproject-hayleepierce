@@ -2,9 +2,10 @@ import streamlit as st
 # import nltk
 # from nltk.sentiment import SentimentIntensityAnalyzer
 from development import develop_search_lists, develop_corpus
+from printing import print_top_articles
 
 # sia = SentimentIntensityAnalyzer()
-
+st.title('Corpus Searcher')
 # st.text_input
 directory = 'data\corpus'
 search = st.text_input('What would you like to search for?')
@@ -32,9 +33,12 @@ for search_list in search_lists:
                         if phrase in paragraph and article not in found_articles:
                             found_articles.append(article)
 
-percentage = str(int(len(found_articles) / len(corpus) * 100)) + '%'
-print(f'Search found in {percentage} of the corpus.')
+if type(search) != type(None):
+    st.write('Number of article found:', len(found_articles))
+    percentage = str(int(len(found_articles) / len(corpus) * 100)) + '%'
+    st.write('Percentage of total corpus:', percentage)
+    # st.write('Positivity percentage:', pos_percentage)
+    # st.write('Negativity percentage:', neg_percentage)
 
-st.write('Percentage of total corpus:', percentage)
-# st.write('Positivity percentage:', percentage)
-# st.write('Negativity percentage:', percentage)
+    st.header('Top Articles Found', divider='gray')
+    print_top_articles(found_articles)
