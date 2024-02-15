@@ -1,4 +1,4 @@
-"""Main.py file for the Corpus Search program."""
+"""Main.py file for the Corpus Comb program."""
 
 import streamlit as st
 from development import develop_search_lists, develop_corpus
@@ -10,7 +10,7 @@ from search import search_corpus
 # from nltk.sentiment import SentimentIntensityAnalyzer
 
 
-st.title("Corpus Search")
+st.title("Corpus Comb")
 # location of corpus directory
 directory = "data\corpus"
 search = st.text_input("What would you like to search for?")
