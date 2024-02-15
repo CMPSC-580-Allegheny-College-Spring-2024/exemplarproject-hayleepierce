@@ -1,3 +1,5 @@
+"""Function(s) that handle the development of data structures."""
+
 import string
 import os
 from itertools import combinations
@@ -5,13 +7,17 @@ import xml.etree.ElementTree as ET
 
 def develop_search_lists(search):
     """Develop a list of lists containing strings to search for."""
+    # split the search string
     word_list = search.split()
+    # remove stop words
     for word in word_list:
         if len(word) < 4:
             word_list.remove(word)
+    # remove punctuation
     for index in range(len(word_list)):
         for char in string.punctuation:
             word_list[index] = word_list[index].replace(char, '')
+    # create combination of search words
     search_lists = []
     r = list(range(len(word_list)))
     r.reverse()
