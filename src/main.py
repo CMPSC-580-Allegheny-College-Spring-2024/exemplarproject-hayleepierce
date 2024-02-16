@@ -5,7 +5,7 @@ from development import develop_search_lists, develop_corpus
 from printing import print_top_articles
 from search import search_corpus
 
-# potential implementation of sentiment anaylysis
+# Potential implementation of sentiment analysis
 # import nltk
 # from nltk.sentiment import SentimentIntensityAnalyzer
 
@@ -23,7 +23,7 @@ corpus = develop_corpus(directory)
 found_articles = search_corpus(corpus, search_lists)
 
 # if a search was entered print the results
-if type(search) != type(None):
+if search != "":
     st.write("Number of article found:", len(found_articles))
     percentage = str(int(len(found_articles) / len(corpus) * 100)) + "%"
     st.write("Percentage of total corpus:", percentage)
