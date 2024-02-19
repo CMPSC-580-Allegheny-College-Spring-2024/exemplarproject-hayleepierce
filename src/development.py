@@ -2,6 +2,8 @@
 
 import string
 import os
+import nltk
+from nltk.corpus import stopwords
 from itertools import combinations
 import xml.etree.ElementTree as ET
 
@@ -9,10 +11,12 @@ import xml.etree.ElementTree as ET
 def develop_search_lists(search):
     """Develop a list of lists containing strings to search for."""
     # split the search string
+    nltk.download('stopwords')
+    stop_words = set(stopwords.words('english'))
     word_list = search.split()
     # remove stop words
     for word in word_list:
-        if len(word) < 4:
+        if word in stop_words:
             word_list.remove(word)
     # remove punctuation
     for index in range(len(word_list)):
