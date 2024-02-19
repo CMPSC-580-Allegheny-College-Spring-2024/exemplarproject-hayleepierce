@@ -17,7 +17,6 @@ search = st.text_input("What would you like to search for?")
 
 # develop data structures
 search_lists = develop_search_lists(search)
-print(search_lists)
 corpus = develop_corpus(directory)
 
 # search through the corpus for search_lists
