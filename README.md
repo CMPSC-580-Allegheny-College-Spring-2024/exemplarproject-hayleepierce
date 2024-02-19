@@ -29,13 +29,11 @@ TODO (250 words minimum): Discuss the overview of the project using and building
 
 ## Literature Review
 
-### []()
-
-#### Summary
 
 
-
+```
 TODO: Conduct literature review by describing relevant work related to the project and hence providing an overview of the state of the art in the area of the project. This section serves to contextualize the study within the existing body of literature, presenting a thorough review of relevant prior research and scholarly contributions. In clear and meaningful language, this section aims to demonstrate the problems, gaps, controversies, or unanswered questions that are associated with the current understanding of the topic. In addition, this section serves to highlight the current study's unique contribution to the field. By summarizing and critiquing existing works, this section provides a foundation for readers to appreciate the novelty and significance of the study in relation to the broader academic discourse. The "Literature Review" section further contributes to the `why is the project important?` question. The number of scholarly work included in the literature review may vary depending on the project.
+```
 
 ## Methods
 
@@ -43,16 +41,74 @@ This project parses through a [corpus](data/corpus) of academic articles in the 
 
 [NLTK's Sentiment Intensity Analyzer](https://www.nltk.org/api/nltk.sentiment.SentimentIntensityAnalyzer.html?highlight=sentimentintensity) would then be used to determine these articles' positivity and negativity percentages. These percentages will be shared with the user, as well.
 
-``
+```
 TODO: Discuss the methods of the project to be able to answer the `how` question (`how was this project completed?`). The methods section in an academic research outlines the specific procedures, techniques, and methodologies employed to conduct the study, offering a transparent and replicable framework for the research. It details the resources behind the work, in terms of, for example, the design of the algorithm and the experiment(s), data collection methods, applied software libraries, required tools, the types of statistical analyses and models which are applied to ensure the rigor and validity of the study. This section provides clarity for other researchers to understand and potentially replicate the study, contributing to the overall reliability and credibility of the research findings.
-``
+```
+
 ## Using the Artifact
 
-TODO: The result of your work will be the delivery of some type of artifact which will likely contain software programming solutions (i.e., Python code, HTML pages, or similar). To allow the user to experience and execute your artifact, you must first explain how to set up the initial conditions to run or use the artifact. Be sure to offer explicit details and instructions regarding the installation of the necessary foundational libraries, drivers, external software projects, containers and similar types of tertiary software which are involved in executing your artifact. Once these initial software installations have been completed, then you are asked to offer the necessary instructions for actually executing the artifact. For this, please provide all command line parameters or associated bash commands for execution. Please remember that users are unwilling to "figure-out" how to use code in absence of the essential instructions concerning the execution of project artifacts.
+To use this Artifact follow the following steps:
 
+1. Clone the repository
+2. Navigate to the repository's directory
+3. Install the required dependencies by running the following command:
+    - `python -m pip install -r requirements.txt`
+4. Start the dashboard by running the following command:
+    - `python -m streamlit run src/main.py`
+5. Type in your desired search in the search bar
+
+```
+TODO: The result of your work will be the delivery of some type of artifact which will likely contain software programming solutions (i.e., Python code, HTML pages, or similar). To allow the user to experience and execute your artifact, you must first explain how to set up the initial conditions to run or use the artifact. Be sure to offer explicit details and instructions regarding the installation of the necessary foundational libraries, drivers, external software projects, containers and similar types of tertiary software which are involved in executing your artifact. Once these initial software installations have been completed, then you are asked to offer the necessary instructions for actually executing the artifact. For this, please provide all command line parameters or associated bash commands for execution. Please remember that users are unwilling to "figure-out" how to use code in absence of the essential instructions concerning the execution of project artifacts.
+```
 ## Results and Outcomes
 
+The search "mutated cells" gives the following output:
+
+```
+Number of article found: 21
+
+Percentage of total corpus: 1%
+
+Top Articles Found
+Article 1
+Title: Activation of mammalian Chk1 during DNA replication arrest: a role for Chk1 in the intra-S phase checkpoint monitoring replication origin firing
+
+Publication Date: 9/3/2001
+
+Author(s): Feijoo, Carmen et al.
+
+Article 2
+Title: A modified version of a Fos-associated cluster in HBZ affects Jun transcriptional potency
+
+Publication Date: 5/22/2006
+
+Author(s): Hivin, Patrick et al.
+
+Article 3
+Title: RMCE-ASAP: a gene targeting method for ES and somatic cells to accelerate phenotype analyses
+
+Publication Date: 7/26/2006
+
+Author(s): Toledo, Franck et al.
+
+Article 4
+Title: Transcriptional potential of the γ-globin gene is dependent on the CACCC box in a developmental stage-specific manner
+
+Publication Date: 8/12/2006
+
+Author(s): Li, Qiliang et al.
+
+Article 5
+Title: Structural basis of yeast aminoacyl-tRNA synthetase complex formation revealed by crystal structures of two binary sub-complexes
+
+Publication Date: 8/12/2006
+
+Author(s): Simader, Hannes et al.
+```
+
+```
 TODO: Discuss the outcomes of your project in this section. Depending on the project type, the presented results and outcomes will vary. In some projects, you will be asked to present a theoretical analysis, and in others your experimental study and its results. In this section, you are also to demonstrate an enhanced version of your artifact by showing its capabilities and applications, in light of the evaluation metrics for assessing the artifact
+```
 
 ---
 
