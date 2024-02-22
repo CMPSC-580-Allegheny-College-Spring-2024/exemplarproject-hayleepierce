@@ -52,7 +52,7 @@ This project uses [Streamlit](https://streamlit.io/) to create a dashboard for t
 - Content
   - "p"
 
-Each article is a dictionary with each of the above pieces of information as a key-value pair. These article dictionaries are added to a list to form the corpus.
+Each article is a dictionary with each of the above pieces of information as a key-value pair. The Title is a concatenated string made up of the "article-title", a colon, and the "subtitle". Some articles do not have an "article-title" and/or "subtitle". In the case of no "subtitle", Title consists of just "article-title". If both are missing, Title is set equal to "None". The Date is also a concatenated string with the "month", "day", and "year" with a `/` between each. Some article's publication date only consists of a "month" and "year". These article dictionaries are added to a list to form the corpus.
 
 The user's input is taken in as a string and the `split()` method is used to divide the string into a list. A list of English stopwords from [NLTK](https://www.nltk.org/) is used to remove stopwords from this list. The [`combinations()`](https://docs.python.org/3/library/itertools.html#itertools.combinations) function from the `itertools` module is used to create several sublists of all the different combinations of the remaining words. The sublists are ordered from the sublist containing the combinations using the most words to the sublist containing the singular words.
 
