@@ -68,13 +68,12 @@ def develop_corpus(directory):
         surname = root.findall(".//surname")
         given_names = root.findall(".//given-names")
         for name in surname:
-            if type(name.text) != type(None):
-                authors.append(name.text)
+            authors.append(name.text)
         count = 0
         for name in given_names:
             if type(name.text) != type(None):
                 authors[count] = authors[count] + ", " + name.text
-                count += 1
+            count += 1
         article["Author(s)"] = authors
         # find all paragraphs within the article
         paragraphs = []
