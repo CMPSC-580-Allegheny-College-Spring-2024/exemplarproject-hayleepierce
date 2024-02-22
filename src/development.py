@@ -10,10 +10,10 @@ import xml.etree.ElementTree as ET
 
 def develop_search_lists(search):
     """Develop a list of lists containing strings to search for."""
-    # split the search string
     nltk.download('stopwords')
     stop_words = set(stopwords.words('english'))
-    word_list = search.split()
+    # split the search string
+    word_list = search.lower().split()
     # remove stop words
     for word in word_list:
         if word in stop_words:
@@ -79,7 +79,8 @@ def develop_corpus(directory):
         # find all paragraphs within the article
         paragraphs = []
         for paragraph in root.findall(".//p"):
-            paragraphs.append(paragraph.text)
+            if type(paragraph.text) != type(None):
+                paragraphs.append(paragraph.text.lower())
         article["Content"] = paragraphs
         # add article to corpus
         corpus.append(article)
