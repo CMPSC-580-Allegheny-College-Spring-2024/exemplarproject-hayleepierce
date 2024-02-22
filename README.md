@@ -19,9 +19,9 @@ Here, think of an interesting name of the work that bring a freshness and excite
 
 ## Overview
 
-This project aims to provide a dashboard where a user can search for a word/phrase within a corpus of articles. The number of articles the word/phrase was found is provided, as well as the percentage of the corpus that references the word/phrase. AI will be used to determine if the word/phrase is discussed in a positive or negative light, giving the user a corresponding percentage of articles for each.
+This project consists of a dashboard where a user can search through a corpus of articles for a word/phrase. The number of articles the word/phrase was found in is provided, as well as the percentage of the total corpus that references the word/phrase. The information for the top articles is displayed to the user.
 
-The project will assist users in determining the validity of their word/phrase. Users can assume that if their word/phrase does not appear in many, or none, of the articles the word/phrase is not valid. The project can also help users determine how their word/phrase is typically discussed in academic articles. If the negative percentage of articles that discuss their word/phrase is high they can assume most academic articles portray their word/phrase negatively.
+This project assists the user in determining the validity of the word/phrase they search. The user can assume that if a large percentage of the corpus mentions their word/phrase, their word/phrase is likely to be valid.
 
 ```
 TODO (250 words minimum): Discuss the overview of the project using and building on the project description provided by the department. In this section, a concise summary is discussed of the study's key elements, offering the reader a quick understanding of the research's scope and goals. The section continues to outline the main topics, research questions, hypotheses, and /or theories in a clear and meaningful language to provide a type of roadmap for the reader to navigate the forthcoming details of the project. This section also needs to motivate the project by providing context for the study, outlining the current state of knowledge in the field, and highlighting any gaps or limitations in existing research. The section serves as a foundational guide that enables the reader to grasp the context of the study, in addition to its structure, before moving into a more technically-based discussion in the following sections of the article. In short, the "Overview" section needs to answer the `what` and `why` questions, that is `what is the project?` and `why is the project important?`
@@ -37,9 +37,28 @@ TODO: Conduct literature review by describing relevant work related to the proje
 
 ## Methods
 
-This project parses through a [corpus](data/corpus) of academic articles in the form of XML files using [The ElementTree XML API](https://docs.python.org/3/library/xml.etree.elementtree.html). The user will input a word/phrase and this string will be split into multiple strings. The program will search through each of the XML files for these words. Nonessential words ("can", "if", "and", etc.) will be removed from the search. All articles these words were found in will be returned to the user with the articles' titles, authors, and publication dates. The percentage of articles returned will be calculated and shared with the user.
+This project uses [Streamlit](https://streamlit.io/) to create a dashboard for the user to input a search and view the corresponding output. A collection of academic articles in the form of XML files from [PubMed](https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_bulk/) to develop a corpus. [The ElementTree XML API](https://docs.python.org/3/library/xml.etree.elementtree.html) is used to parse through the XML files; collecting the following information using the associated tags:
 
-[NLTK's Sentiment Intensity Analyzer](https://www.nltk.org/api/nltk.sentiment.SentimentIntensityAnalyzer.html?highlight=sentimentintensity) would then be used to determine these articles' positivity and negativity percentages. These percentages will be shared with the user, as well.
+- Title
+  - "article-title"
+  - "subtitle"
+- Date
+  - "month"
+  - "day"
+  - "year"
+- Author(s)
+  - "surname"
+  - "given-names"
+- Content
+  - "p"
+
+Each article is a dictionary with each of the above pieces of information as a key-value pair. These article dictionaries are added to a list to form the corpus.
+
+The user's input is taken in as a string and the `split()` method is used to divide the string into a list. A list of English stopwords from [NLTK](https://www.nltk.org/) is used to remove stopwords from this list. The [`combinations()`](https://docs.python.org/3/library/itertools.html#itertools.combinations) function from the `itertools` module is used to create several sublists of all the different combinations of the remaining words. The sublists are ordered from the sublist containing the combinations using the most words to the sublist containing the singular words.
+
+Iterating through the sublists, the corpus is searched using the "Content" key for each article dictionary. If a string from the sublist is found in the content of an article, the article's dictionary is added to the `found_articles` list (unless it has already been added during a previous search). The final sublist (containing the singular words) is slightly different, with all words having to be found in the article's content for it to be added to `found_articles`.
+
+The number of articles found (the length of `found_articles`) and the percentage of the total corpus the search was found in (the length of `found_articles` divided by the length of the corpus list) is displayed to the user. The top five articles and their information is displayed to the user, as well.
 
 ```
 TODO: Discuss the methods of the project to be able to answer the `how` question (`how was this project completed?`). The methods section in an academic research outlines the specific procedures, techniques, and methodologies employed to conduct the study, offering a transparent and replicable framework for the research. It details the resources behind the work, in terms of, for example, the design of the algorithm and the experiment(s), data collection methods, applied software libraries, required tools, the types of statistical analyses and models which are applied to ensure the rigor and validity of the study. This section provides clarity for other researchers to understand and potentially replicate the study, contributing to the overall reliability and credibility of the research findings.
@@ -60,6 +79,7 @@ To use this Artifact follow the following steps:
 ```
 TODO: The result of your work will be the delivery of some type of artifact which will likely contain software programming solutions (i.e., Python code, HTML pages, or similar). To allow the user to experience and execute your artifact, you must first explain how to set up the initial conditions to run or use the artifact. Be sure to offer explicit details and instructions regarding the installation of the necessary foundational libraries, drivers, external software projects, containers and similar types of tertiary software which are involved in executing your artifact. Once these initial software installations have been completed, then you are asked to offer the necessary instructions for actually executing the artifact. For this, please provide all command line parameters or associated bash commands for execution. Please remember that users are unwilling to "figure-out" how to use code in absence of the essential instructions concerning the execution of project artifacts.
 ```
+
 ## Results and Outcomes
 
 The search "mutated cells" gives the following output:
