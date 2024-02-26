@@ -3,8 +3,6 @@
 
 ## Semester: Spring 2024
 
-This repository contains student project materials, including project report, data, code, and references to literature for this departmentally-sponsored project. __As you complete each of the below sections in this document, please be sure to remove the preamble text so that it does not appear in your work.__ Please work with your first reader to answer any questions or concerns that you may have.
-
 ## GitHub Handle: hayleepierce
 
 ## Name: Haylee Pierce
@@ -12,8 +10,6 @@ This repository contains student project materials, including project report, da
 ## Major: Computer Science (from the former Academic Bulletin)
 
 ## Project Name: Corpus Comb
-
-Here, think of an interesting name of the work that bring a freshness and excitement to the area of this project. Consider using a name that carries some information about what the project and provides some hint at what the project does without being too wordy.
 
 ---
 
@@ -37,7 +33,7 @@ TODO: Conduct literature review by describing relevant work related to the proje
 
 ## Methods
 
-This project uses [Streamlit](https://streamlit.io/) to create a dashboard for the user to input a search and view the corresponding output. A collection of academic articles in the form of XML files from [PubMed](https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_bulk/) to develop a corpus. [The ElementTree XML API](https://docs.python.org/3/library/xml.etree.elementtree.html) is used to parse through the XML files; collecting the following information using the associated tags:
+This project uses [Streamlit](https://streamlit.io/) to create a dashboard for the user to input a search and view the corresponding output. A collection of academic articles in the form of XML files from [PubMed](https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_bulk/) is used to develop a corpus. [The ElementTree XML API](https://docs.python.org/3/library/xml.etree.elementtree.html) is used to parse through the XML files; collecting the following information using the associated tags:
 
 - Title
   - "article-title"
@@ -130,12 +126,14 @@ Author(s): Simader, Hannes et al.
 TODO: Discuss the outcomes of your project in this section. Depending on the project type, the presented results and outcomes will vary. In some projects, you will be asked to present a theoretical analysis, and in others your experimental study and its results. In this section, you are also to demonstrate an enhanced version of your artifact by showing its capabilities and applications, in light of the evaluation metrics for assessing the artifact
 ```
 
+## Future Work
+
+- [Sentiment Analysis](https://www.nltk.org/api/nltk.sentiment.SentimentIntensityAnalyzer.html?highlight=positive+negative)
+- Test Cases
+- [Pickle](https://docs.python.org/3/library/pickle.html)
+
 ---
 
 ## Exemplar Projects Discussions
 
-The department's project descriptions can be found at [https://github.com/ReadyResearchers-2023-24/cmpsc-580-exemplar-projects](https://github.com/ReadyResearchers-2023-24/cmpsc-580-exemplar-projects)
-
-## Schedule
-
-The schedule for this work can be found at [https://github.com/CMPSC-580-Allegheny-College-Spring-2024/classDocs?tab=readme-ov-file#schedule](https://github.com/CMPSC-580-Allegheny-College-Spring-2024/classDocs?tab=readme-ov-file#schedule)
+The department's project descriptions can be found [here](https://github.com/ReadyResearchers-2023-24/cmpsc-580-exemplar-projects).
