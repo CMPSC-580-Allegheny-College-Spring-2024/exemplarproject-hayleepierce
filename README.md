@@ -33,6 +33,8 @@ TODO: Conduct literature review by describing relevant work related to the proje
 
 ## Methods
 
+### Developing Corpus
+
 This project uses [Streamlit](https://streamlit.io/) to create a dashboard for the user to input a search and view the corresponding output. A collection of academic articles in the form of XML files from [PubMed](https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_bulk/) is used to develop a corpus. [The ElementTree XML API](https://docs.python.org/3/library/xml.etree.elementtree.html) is used to parse through the XML files; collecting the following information using the associated tags:
 
 - Title
@@ -50,9 +52,15 @@ This project uses [Streamlit](https://streamlit.io/) to create a dashboard for t
 
 Each article is a dictionary with each of the above pieces of information as a key-value pair. The Title is a concatenated string made up of the "article-title", a colon, and the "subtitle". Some articles do not have an "article-title" and/or "subtitle". In the case of no "subtitle", Title consists of just "article-title". If both are missing, the Title is set equal to "None". The Date is also a concatenated string with the "month", "day", and "year" with a `/` between each. Some of the articles' publication date only consists of a "month" and "year". The Author(s) is a list of concatenated strings made up of the "surname, a comma, and the "given-names". In the case that the author only has a "surname", only the "surname" is added to the list. Content is a list of strings, with each string being a paragraph from the article. The `lower()` function is used to make all characters in these strings lowercase. These article dictionaries are added to a list to form the corpus.
 
+### User Input
+
 The user's input is taken in as a string, the `lower()` function is used to make all characters in the string lowercase, and the `split()` method is used to divide the string into a list. A list of English stopwords from [NLTK](https://www.nltk.org/) is used to remove stopwords from this list. The [`combinations()`](https://docs.python.org/3/library/itertools.html#itertools.combinations) function from the `itertools` module is used to create several sublists of all the different combinations of the remaining words. The sublists are ordered from the sublist containing the combinations using the most words to the sublist containing the singular words.
 
+### Searching Corpus
+
 Iterating through the sublists, the corpus is searched using the "Content" key for each article dictionary. If a string from the sublist is found in the content of an article, the article's dictionary is added to the `found_articles` list (unless it has already been added during a previous search). The final sublist (containing the singular words) is slightly different, with all words having to be found in the article's content for it to be added to `found_articles`.
+
+### Output
 
 The number of articles found (the length of `found_articles`) and the percentage of the total corpus the search was found in (the length of `found_articles` divided by the length of the corpus list) is displayed to the user. The top five articles and their information is displayed to the user, as well.
 
@@ -70,7 +78,7 @@ To use this Artifact follow the following steps:
     - `python -m pip install -r requirements.txt`
 4. Start the dashboard by running the following command:
     - `python -m streamlit run src/main.py`
-5. Type in your desired search in the search bar
+5. Enter your desired search into the search bar
 
 ```
 TODO: The result of your work will be the delivery of some type of artifact which will likely contain software programming solutions (i.e., Python code, HTML pages, or similar). To allow the user to experience and execute your artifact, you must first explain how to set up the initial conditions to run or use the artifact. Be sure to offer explicit details and instructions regarding the installation of the necessary foundational libraries, drivers, external software projects, containers and similar types of tertiary software which are involved in executing your artifact. Once these initial software installations have been completed, then you are asked to offer the necessary instructions for actually executing the artifact. For this, please provide all command line parameters or associated bash commands for execution. Please remember that users are unwilling to "figure-out" how to use code in absence of the essential instructions concerning the execution of project artifacts.
@@ -224,9 +232,17 @@ TODO: Discuss the outcomes of your project in this section. Depending on the pro
 
 ## Future Work
 
-- [Sentiment Analysis](https://www.nltk.org/api/nltk.sentiment.SentimentIntensityAnalyzer.html?highlight=positive+negative)
-- Test Cases
-- [Pickle](https://docs.python.org/3/library/pickle.html)
+### [Pickle](https://docs.python.org/3/library/pickle.html)
+
+
+
+### [Sentiment Analysis](https://www.nltk.org/api/nltk.sentiment.SentimentIntensityAnalyzer.html?highlight=positive+negative)
+
+
+
+### Test Suite
+
+
 
 ---
 
