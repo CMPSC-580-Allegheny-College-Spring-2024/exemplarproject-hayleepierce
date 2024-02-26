@@ -76,9 +76,17 @@ To use this Artifact follow the following steps:
 TODO: The result of your work will be the delivery of some type of artifact which will likely contain software programming solutions (i.e., Python code, HTML pages, or similar). To allow the user to experience and execute your artifact, you must first explain how to set up the initial conditions to run or use the artifact. Be sure to offer explicit details and instructions regarding the installation of the necessary foundational libraries, drivers, external software projects, containers and similar types of tertiary software which are involved in executing your artifact. Once these initial software installations have been completed, then you are asked to offer the necessary instructions for actually executing the artifact. For this, please provide all command line parameters or associated bash commands for execution. Please remember that users are unwilling to "figure-out" how to use code in absence of the essential instructions concerning the execution of project artifacts.
 ```
 
-## Results and Outcomes
+## Testing and Results
 
-The search "mutated cells" gives the following output:
+This project was tested manually using a series of inputs varying in length, punctuation, and case.
+
+The search "fun guy" found a bug in the previous method of removing stop words, which was designed to remove all words with less than 4 characters. When given the search "fun guy" both words should have been removed, only the word "fun" was removed. This manner of removing stopwords was grossly inefficient; therefore, it was replaced by the current method.
+
+The project originally did not account for cases. After finding drastic results for the searches "fish" and "Fish", code was added to change all inputs and paragraphs to lowercase during the development of the search lists and corpus.
+
+Below are the results of three different searches:
+
+Search: "mutated cells"
 
 ```
 Number of article found: 21
@@ -122,6 +130,94 @@ Publication Date: 8/12/2006
 Author(s): Simader, Hannes et al.
 ```
 
+Search: "How do mammalian cells adapt to surroundings?"
+
+```
+Number of article found: 89
+
+Percentage of total corpus: 5%
+
+Top Articles Found
+Article 1
+Title: Activation of mammalian Chk1 during DNA replication arrest: a role for Chk1 in the intra-S phase checkpoint monitoring replication origin firing
+
+Publication Date: 9/3/2001
+
+Author(s): Feijoo, Carmen et al.
+
+Article 2
+Title: Spatial distribution and specification of mammalian replication origins during G1 phase
+
+Publication Date: 4/28/2003
+
+Author(s): Li, Feng et al.
+
+Article 3
+Title: The DNA polymerase λ is required for the repair of non-compatible DNA double strand breaks by NHEJ in mammalian cells
+
+Publication Date: 5/31/2006
+
+Author(s): Capp, Jean-Pascal et al.
+
+Article 4
+Title: Dominant-negative Pes1 mutants inhibit ribosomal RNA processing and cell proliferation via incorporation into the PeBoW-complex
+
+Publication Date: 5/31/2006
+
+Author(s): Grimm, Thomas et al.
+
+Article 5
+Title: Dynamic recruitment of transcription factors and epigenetic changes on the ER stress response gene promoters
+
+Publication Date: 6/6/2006
+
+Author(s): Donati, Giacomo et al.
+```
+
+Search: "Red Fish"
+
+```
+Number of article found: 26
+
+Percentage of total corpus: 1%
+
+Top Articles Found
+Article 1
+Title: The replication timing program of the Chinese hamster
+
+Publication Date: 7/23/2001
+
+Author(s): Li, Feng et al.
+
+Article 2
+Title: Mutagenic nucleotide incorporation and hindered translocation by a food carcinogen C8-dG adduct in
+
+Publication Date: 7/4/2006
+
+Author(s): Zhang, Ling et al.
+
+Article 3
+Title: Royal Jelly Prevents Osteoporosis in Rats: Beneficial Effects in Ovariectomy Model and in Bone Tissue Culture Model
+
+Publication Date: 9/24/2006
+
+Author(s): Hidaka, Saburo et al.
+
+Article 4
+Title: NATsDB: Natural Antisense Transcripts DataBase
+
+Publication Date: 1/1/2007
+
+Author(s): Zhang, Yong et al.
+
+Article 5
+Title: Troubleshooting coupled
+
+Publication Date: 11/11/2006
+
+Author(s): Iskakova, Madina B. et al.
+```
+
 ```
 TODO: Discuss the outcomes of your project in this section. Depending on the project type, the presented results and outcomes will vary. In some projects, you will be asked to present a theoretical analysis, and in others your experimental study and its results. In this section, you are also to demonstrate an enhanced version of your artifact by showing its capabilities and applications, in light of the evaluation metrics for assessing the artifact
 ```
@@ -136,4 +232,4 @@ TODO: Discuss the outcomes of your project in this section. Depending on the pro
 
 ## Exemplar Projects Discussions
 
-The department's project descriptions can be found [here](https://github.com/ReadyResearchers-2023-24/cmpsc-580-exemplar-projects).
+The department's project description can be found [here](https://github.com/ReadyResearchers-2023-24/cmpsc-580-exemplar-projects/tree/main/DataScience).
