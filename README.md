@@ -33,9 +33,9 @@ TODO: Conduct literature review by describing relevant work related to the proje
 
 ## Methods
 
-### Developing Corpus
+### Developing the Corpus
 
-This project uses [Streamlit](https://streamlit.io/) to create a dashboard for the user to input a search and view the corresponding output. A collection of academic articles in the form of XML files from [PubMed](https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_bulk/) is used to develop a corpus. [The ElementTree XML API](https://docs.python.org/3/library/xml.etree.elementtree.html) is used to parse through the XML files; collecting the following information using the associated tags:
+A collection of academic articles in the form of XML files from [PubMed](https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_bulk/) is used to develop a corpus. [The ElementTree XML API](https://docs.python.org/3/library/xml.etree.elementtree.html) is used to parse through the XML files; collecting the following information using the associated tags:
 
 - Title
   - "article-title"
@@ -54,15 +54,15 @@ Each article is a dictionary with each of the above pieces of information as a k
 
 ### User Input
 
-The user's input is taken in as a string, the `lower()` function is used to make all characters in the string lowercase, and the `split()` method is used to divide the string into a list. A list of English stopwords from [NLTK](https://www.nltk.org/) is used to remove stopwords from this list. The [`combinations()`](https://docs.python.org/3/library/itertools.html#itertools.combinations) function from the `itertools` module is used to create several sublists of all the different combinations of the remaining words. The sublists are ordered from the sublist containing the combinations using the most words to the sublist containing the singular words.
+This project uses [Streamlit](https://streamlit.io/) to create a dashboard for the user to input a search. The user's input is taken in as a string, the `lower()` function is used to make all characters in the string lowercase, and the `split()` method is used to divide the string into a list. A list of English stopwords from [NLTK](https://www.nltk.org/) is used to remove stopwords from this list. The [`combinations()`](https://docs.python.org/3/library/itertools.html#itertools.combinations) function from the `itertools` module is used to create several sublists of all the different combinations of the remaining words. The sublists are ordered from the sublist containing the combinations using the most words to the sublist containing the singular words.
 
-### Searching Corpus
+### Searching the Corpus
 
 Iterating through the sublists, the corpus is searched using the "Content" key for each article dictionary. If a string from the sublist is found in the content of an article, the article's dictionary is added to the `found_articles` list (unless it has already been added during a previous search). The final sublist (containing the singular words) is slightly different, with all words having to be found in the article's content for it to be added to `found_articles`.
 
 ### Output
 
-The number of articles found (the length of `found_articles`) and the percentage of the total corpus the search was found in (the length of `found_articles` divided by the length of the corpus list) is displayed to the user. The top five articles and their information is displayed to the user, as well.
+The results are displayed using the [Streamlit](https://streamlit.io/) dashboard. The number of articles found (the length of `found_articles`) and the percentage of the total corpus the search was found in (the length of `found_articles` divided by the length of the corpus list) is displayed to the user. The top five articles and their information is displayed to the user, as well.
 
 ```
 TODO: Discuss the methods of the project to be able to answer the `how` question (`how was this project completed?`). The methods section in an academic research outlines the specific procedures, techniques, and methodologies employed to conduct the study, offering a transparent and replicable framework for the research. It details the resources behind the work, in terms of, for example, the design of the algorithm and the experiment(s), data collection methods, applied software libraries, required tools, the types of statistical analyses and models which are applied to ensure the rigor and validity of the study. This section provides clarity for other researchers to understand and potentially replicate the study, contributing to the overall reliability and credibility of the research findings.
