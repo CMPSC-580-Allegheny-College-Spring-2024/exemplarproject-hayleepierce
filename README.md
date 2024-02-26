@@ -11,6 +11,8 @@
 
 ## Project Name: Corpus Comb
 
+_The department's project description can be found [here](https://github.com/ReadyResearchers-2023-24/cmpsc-580-exemplar-projects/tree/main/DataScience)._
+
 ---
 
 ## Overview
@@ -243,9 +245,3 @@ TODO: Discuss the outcomes of your project in this section. Depending on the pro
 ### Test Suite
 
 
-
----
-
-## Exemplar Projects Discussions
-
-The department's project description can be found [here](https://github.com/ReadyResearchers-2023-24/cmpsc-580-exemplar-projects/tree/main/DataScience).
