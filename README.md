@@ -242,7 +242,7 @@ Author(s): Iskakova, Madina B. et al.
 
 ### Pickle
 
-[_Pickle_](https://docs.python.org/3/library/pickle.html) is a Python module that allows for the serializing and de-serializing of a Python object structure. The use of this module would allow the corpus to be serialized after it is developed and then de-serialized for reuse. This would remove the need to re-develop the corpus for each of the searches the user inputs; as a result, decreasing the amount of time and processing required for each search.
+[_Pickle_](https://docs.python.org/3/library/pickle.html) is a Python module that allows for the serializing and de-serializing of a Python object structure. The use of this module would allow the corpus to be serialized after it is developed and then de-serialized for reuse. This would remove the need to re-develop the corpus for each of the searches the user inputs; as a result, decreasing the amount of time and processing required for each search. This would also allow the size of the corpus to be significantly increased.
 
 ### Sentiment Analysis
 
