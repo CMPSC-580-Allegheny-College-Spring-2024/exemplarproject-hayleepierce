@@ -100,15 +100,15 @@ To **replace** the corpus follow the following steps:
 
 This project was tested manually using a series of inputs varying in length, punctuation, and case.
 
-The search "fun guy" found a bug in the previous method of removing stop words, which was designed to remove all words with less than 4 characters. When given the search "fun guy" both words should have been removed, only the word "fun" was removed. This manner of removing stopwords was grossly inefficient; therefore, it was replaced by the current method.
+The search "fun guy" found a bug in the previous method of removing stop words, which was designed to remove all words with less than 4 characters. When given the search "fun guy" both words should have been removed, but only the word "fun" was removed. This manner of removing stopwords was grossly inefficient; therefore, it was replaced by the [current method](#user-input).
 
-The project originally did not account for cases. After finding drastic results for the searches "fish" and "Fish", code was added to change all inputs and paragraphs to lowercase during the development of the search lists and corpus.
+The project originally did not account for cases. After finding drastically different results for the searches "fish" and "Fish", code was added to change all characters within the user input and article paragraphs to lowercase during the development of the [search lists](#user-input) and [corpus](#developing-the-corpus).
 
-Below are the results of three different searches:
+Below are the results produced by three of the different searches used during testing:
 
 Search: "mutated cells"
 
-```
+```markdown
 Number of article found: 21
 
 Percentage of total corpus: 1%
@@ -152,7 +152,7 @@ Author(s): Simader, Hannes et al.
 
 Search: "How do mammalian cells adapt to surroundings?"
 
-```
+```markdown
 Number of article found: 89
 
 Percentage of total corpus: 5%
@@ -196,7 +196,7 @@ Author(s): Donati, Giacomo et al.
 
 Search: "Red Fish"
 
-```
+```markdown
 Number of article found: 26
 
 Percentage of total corpus: 1%
@@ -236,10 +236,6 @@ Title: Troubleshooting coupled
 Publication Date: 11/11/2006
 
 Author(s): Iskakova, Madina B. et al.
-```
-
-```
-TODO: Discuss the outcomes of your project in this section. Depending on the project type, the presented results and outcomes will vary. In some projects, you will be asked to present a theoretical analysis, and in others your experimental study and its results. In this section, you are also to demonstrate an enhanced version of your artifact by showing its capabilities and applications, in light of the evaluation metrics for assessing the artifact
 ```
 
 ## Future Work
