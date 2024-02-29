@@ -58,7 +58,7 @@ Each article is a dictionary containing all of the above pieces of information a
 
 ### User Input
 
-This project uses [Streamlit](https://streamlit.io/) to create a dashboard for the user to input a search. The user's input is taken in as a string and the `lower()` function is used to make all characters within this string lowercase. Then the `split()` method is used to divide this string into a list. A list of English stopwords sourced from [NLTK](https://www.nltk.org/) is used to remove stopwords from this list. The [`combinations()`](https://docs.python.org/3/library/itertools.html#itertools.combinations) function from the `itertools` module is used to create several sublists of all the different combinations the remaining words can create. The sublists are ordered from combinations using the most words to the singular words; therefore, the first articles found will be the ones containing the longest combinations.
+This project uses [Streamlit](https://streamlit.io/) to create a dashboard for the user to input a search. The user's input is taken in as a string and the `lower()` function is used to make all characters within this string lowercase. Then the `split()` method is used to divide this string into a list. A list of English stopwords sourced from the [NLTK](https://www.nltk.org/) library is used to remove stopwords from this list. The [`combinations()`](https://docs.python.org/3/library/itertools.html#itertools.combinations) function from the `itertools` module is used to create several sublists of all the different combinations the remaining words can create. The sublists are ordered from combinations using the most words to the singular words; therefore, the first articles found will be the ones containing the longest combinations.
 
 ### Searching the Corpus
 
@@ -240,8 +240,14 @@ Author(s): Iskakova, Madina B. et al.
 
 ## Future Work
 
-### [Pickle](https://docs.python.org/3/library/pickle.html)
+### Pickle
 
-### [Sentiment Analysis](https://www.nltk.org/api/nltk.sentiment.SentimentIntensityAnalyzer.html?highlight=positive+negative)
+[_Pickle_](https://docs.python.org/3/library/pickle.html) is a Python module that allows for the serializing and de-serializing of a Python object structure. The use of this module would allow the corpus to be serialized after it is developed and then de-serialized for reuse. This would remove the need to re-develop the corpus for each of the searches the user inputs; as a result, decreasing the amount of time and processing required for each search.
+
+### Sentiment Analysis
+
+Sentiment analysis is the technique of processing text data and developing positivity and negativity scores based on the provided text. The [_SentimentIntensityAnalyzer_](https://www.nltk.org/api/nltk.sentiment.SentimentIntensityAnalyzer.html?highlight=positive+negative) from the NLTK library can be used to implement this technique into **Corpus Comb**. The sentence(s) in which the user's input was found would be used by the _SentimentIntensityAnalyzer_ to develop positivity and negativity scores for each article. These scores would then be used to find the average a positivity and negativity score. These scores would be presented to the user; therefore, giving them an idea of if their search is discussed in a positive or negative light within the articles.
 
 ### Test Suite
+
+A series of test cases (a test suite) should be developed to ensure that all the code performs as intended. Due to the strict deadline on this project automated testing using a test suite was unable to be implemented.
