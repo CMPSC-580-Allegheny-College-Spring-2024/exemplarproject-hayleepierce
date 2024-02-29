@@ -39,7 +39,7 @@ TODO: Conduct literature review by describing relevant work related to the proje
 
 ### Developing the Corpus
 
-A collection of academic articles in the form of XML files from [PubMed](https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_bulk/) is used to develop a corpus. [The ElementTree XML API](https://docs.python.org/3/library/xml.etree.elementtree.html) is used to parse through the XML files; collecting the following information using the associated tags:
+A collection of academic articles in the form of XML files from [PubMed](https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_bulk/) is used to develop a corpus. [The ElementTree XML API](https://docs.python.org/3/library/xml.etree.elementtree.html) is used to parse through the XML files and collect the following information using the associated tags:
 
 - Title
   - "article-title"
