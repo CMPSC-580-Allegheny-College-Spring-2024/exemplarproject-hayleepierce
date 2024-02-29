@@ -18,9 +18,13 @@ _The department's project description can be found [here](https://github.com/Rea
 
 ## Overview
 
-This project consists of a dashboard where users can search through a corpus of articles for a word/phrase. The number of articles the word/phrase was found in is provided, as well as the percentage of the total corpus that references the word/phrase. The information for the top articles is displayed to the user.
+**Corpus Comb** is a dashboard created by using [Streamlit](https://streamlit.io/) with which users can search for a word or phrase within a corpus. This corpus is comprised of a collection of academic articles sourced from [PubMed](https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_bulk/). These articles are in the form of XML files. The user could add to or replace the existing corpus with their own XML files, but only if the format of these files is consistent with the format of the existing XML files. Future development is planned to improve the process of developing the corpus and increase the number of files the corpus can contain. After the corpus is searched, the number of articles the word or phrase was found within is displayed to the user, as well as the percentage of the total corpus these articles account for. The following information for the top five articles is presented to the user:
 
-This project assists the user in determining the validity of the word/phrase they search. The user can assume that if a large percentage of the corpus mentions their word/phrase, their word/phrase is likely to be valid.
+- Title
+- Publication Date
+- Author(s)
+
+**Corpus Comb** was created with to goal of assisting users in determining the validity of the word or phrase they searched. The higher the percentage of the total corpus that references the word or phrase the more likely the word or phrase is to be valid. The information about the articles that is presented to the user can assist them in determining if their word or phrase is valid, as well. The user can use this information to find the articles and do further research about their word or phrase. Future features are planned to improve the tool's ability to assist users.
 
 ## Literature Review
 
