@@ -10,13 +10,15 @@
 
 ## Major: Computer Science (from the former Academic Bulletin)
 
-## Project Name: Corpus Comb
+## Project Name:
+
+![Corpus Comb](images/logo.PNG)
 
 _The department's project description can be found [here](https://github.com/ReadyResearchers-2023-24/cmpsc-580-exemplar-projects/tree/main/DataScience)._
 
 ---
 
-## Overview
+## 🔎 Overview
 
 **Corpus Comb** is a dashboard created by using [Streamlit](https://streamlit.io/) with which users can search for a word or phrase within a corpus. This corpus is comprised of a collection of academic articles sourced from [PubMed](https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_bulk/). These articles are in the form of XML files. The user could add to or replace the existing corpus with their own XML files, but only if the format of these files is consistent with the format of the existing XML files. Future development is planned to improve the process of developing the corpus and increase the number of files the corpus can contain. After the corpus is searched, the number of articles the word or phrase was found within is displayed to the user, as well as the percentage of the total corpus these articles account for. The following information for the top five articles is presented to the user:
 
@@ -26,13 +28,13 @@ _The department's project description can be found [here](https://github.com/Rea
 
 **Corpus Comb** was created with to goal of assisting users in determining the validity of the word or phrase they searched. The higher the percentage of the total corpus that references the word or phrase the more likely the word or phrase is to be valid. The information about the articles that is presented to the user can assist them in determining if their word or phrase is valid, as well. The user can use this information to find the articles and do further research about their word or phrase. Future features are planned to improve the tool's ability to assist users.
 
-## Literature Review
+## 📚 Literature Review
 
 [_Keywords of Search Engine Optimization based on Corpus_](lit/Keywords_of_Search_Engine_Optimization.pdf) studies how keywords affect the likelihood a website is included in the results of a search engine, as well as where the website is ranked in those results (Li, 2021). While **Corpus Comb** does not utilize keywords in relation to the articles, the keywords of the user's input are used to search the corpus. Different combinations of these words are used, and the article discusses how larger combinations of keywords are less beneficial. The usage of machine learning artificial intelligence may be useful in the extraction of keywords from both the user input and the articles. These keywords could be used to perform the search, in place of searching through each paragraph of each article (i.e., saving time and processing power).
 
 [_Research of natural language processing based on dynamic search corpus in cultural translation and emotional analysis_](lit/Research_of_natural_language_processing.pdf) discusses the benefits of using text emotion analysis ("...that is, classify texts according to emotional polarity, which is usually divided into two types: positive and negative emotions") to assist the translation of text (Wang, 2023). The benefits of text emotion analysis pointed out by the author are present within **Corpus Comb**, as well. It is planned to implement [sentiment analysis](#sentiment-analysis) into **Corpus Comb** to help users determine the context with which their search is being discussed. Sentiment analysis is a form of text emotion analysis that determines if the text is positive or negative, returning a ratio of the two values.
 
-## Methods
+## 🧪 Methods
 
 ### Developing the Corpus
 
@@ -65,7 +67,7 @@ Iterating through the sublists generated from the user's input, the corpus is se
 
 The results are displayed using the [Streamlit](https://streamlit.io/) dashboard. The number of articles found (the length of `found_articles`) and the percentage of the total corpus the search was found in (the length of `found_articles` divided by the length of the corpus) is displayed to the user. The top five articles (i.e., the first five articles found) and their information are displayed to the user, as well. If less than five articles were found, all articles and their information are displayed. This process is done using the `print_top_articles()` within [printing.py](src/printing.py).
 
-## Using the Artifact
+## 👨‍💻 Using the Artifact
 
 To use **Corpus Comb** follow the following steps:
 
@@ -93,7 +95,7 @@ To **replace** the corpus follow the following steps:
 2. Delete the contents of the [corpus](data/corpus/) folder
 3. Place your XML files in the [corpus](data/corpus/) folder
 
-## Testing and Results
+## 🔬 Testing and Results
 
 This project was tested manually using a series of inputs varying in length, punctuation, and case.
 
@@ -235,7 +237,7 @@ Publication Date: 11/11/2006
 Author(s): Iskakova, Madina B. et al.
 ```
 
-## Future Work
+## 🛠️ Future Work
 
 ### Pickle
 
@@ -248,3 +250,9 @@ Sentiment analysis is the technique of processing text data and developing posit
 ### Test Suite
 
 A series of test cases (a test suite) should be developed to ensure that all the code performs as intended. Due to the strict deadline on this project automated testing using a test suite was unable to be implemented.
+
+## 🔗 References
+
+- Li, R. (2021). Keywords of Search Engine Optimization based on Corpus. _Journal of Physics: Conference Series_.
+
+- Wang, J. (2023). Research of natural language processing based on dynamic search corpus in cultural translation and emotional analysis. _Soft Computing, 27_(11), 7647–7655.
