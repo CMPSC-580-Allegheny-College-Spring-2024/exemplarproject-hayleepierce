@@ -1,4 +1,5 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/Y4rZMh1t)
+
 # Junior Seminar (CMPSC 580) Exemplar Project Repository
 
 ## Semester: Spring 2024
@@ -17,18 +18,15 @@ _The department's project description can be found [here](https://github.com/Rea
 
 ## Overview
 
-This project consists of a dashboard where a user can search through a corpus of articles for a word/phrase. The number of articles the word/phrase was found in is provided, as well as the percentage of the total corpus that references the word/phrase. The information for the top articles is displayed to the user.
+This project consists of a dashboard where users can search through a corpus of articles for a word/phrase. The number of articles the word/phrase was found in is provided, as well as the percentage of the total corpus that references the word/phrase. The information for the top articles is displayed to the user.
 
 This project assists the user in determining the validity of the word/phrase they search. The user can assume that if a large percentage of the corpus mentions their word/phrase, their word/phrase is likely to be valid.
-
-```
-TODO (250 words minimum): Discuss the overview of the project using and building on the project description provided by the department. In this section, a concise summary is discussed of the study's key elements, offering the reader a quick understanding of the research's scope and goals. The section continues to outline the main topics, research questions, hypotheses, and /or theories in a clear and meaningful language to provide a type of roadmap for the reader to navigate the forthcoming details of the project. This section also needs to motivate the project by providing context for the study, outlining the current state of knowledge in the field, and highlighting any gaps or limitations in existing research. The section serves as a foundational guide that enables the reader to grasp the context of the study, in addition to its structure, before moving into a more technically-based discussion in the following sections of the article. In short, the "Overview" section needs to answer the `what` and `why` questions, that is `what is the project?` and `why is the project important?`
-```
 
 ## Literature Review
 
 
 
+(Li, 2021) (Wang, 2023)
 ```
 TODO: Conduct literature review by describing relevant work related to the project and hence providing an overview of the state of the art in the area of the project. This section serves to contextualize the study within the existing body of literature, presenting a thorough review of relevant prior research and scholarly contributions. In clear and meaningful language, this section aims to demonstrate the problems, gaps, controversies, or unanswered questions that are associated with the current understanding of the topic. In addition, this section serves to highlight the current study's unique contribution to the field. By summarizing and critiquing existing works, this section provides a foundation for readers to appreciate the novelty and significance of the study in relation to the broader academic discourse. The "Literature Review" section further contributes to the `why is the project important?` question. The number of scholarly work included in the literature review may vary depending on the project.
 ```
@@ -236,12 +234,6 @@ TODO: Discuss the outcomes of your project in this section. Depending on the pro
 
 ### [Pickle](https://docs.python.org/3/library/pickle.html)
 
-
-
 ### [Sentiment Analysis](https://www.nltk.org/api/nltk.sentiment.SentimentIntensityAnalyzer.html?highlight=positive+negative)
 
-
-
 ### Test Suite
-
-
