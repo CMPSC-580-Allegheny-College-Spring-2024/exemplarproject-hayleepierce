@@ -354,3 +354,6 @@ Temporary Items
 
 # Poetry
 poetry.lock
+
+# Testing Virtual Environment
+.test
